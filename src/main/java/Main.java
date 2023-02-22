@@ -1,14 +1,12 @@
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.TreeSet;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         FileUtils fileUtils = new FileUtils();
         try {
-            ArrayList<Integer> numbersFromFile = fileUtils.saveNumbersFromFile();
-            System.out.println("Lista numerów znajdujących się w pliku: " + numbersFromFile);
-            fileUtils.printNumbersOccurrence();
+            List<Integer> list = fileUtils.saveNumbersFromFile();
+            fileUtils.printNumbersOccurrence(list);
         } catch (FileNotFoundException e) {
             System.err.println("Nie udało się wczytać pliku.");
         }
